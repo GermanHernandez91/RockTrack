@@ -15,6 +15,15 @@
 		778364252409BD4600FB1727 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364242409BD4600FB1727 /* NetworkManager.swift */; };
 		778364272409BE1700FB1727 /* RTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364262409BE1700FB1727 /* RTError.swift */; };
 		778364292409BFDE00FB1727 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364282409BFDE00FB1727 /* Track.swift */; };
+		7783642B2409C56800FB1727 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783642A2409C56800FB1727 /* TrackCell.swift */; };
+		778364302409C65200FB1727 /* RTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783642F2409C65200FB1727 /* RTImageView.swift */; };
+		778364342409C73C00FB1727 /* RTTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364332409C73C00FB1727 /* RTTitleLabel.swift */; };
+		778364362409C77A00FB1727 /* RTSecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364352409C77A00FB1727 /* RTSecondaryLabel.swift */; };
+		778364382409C7A200FB1727 /* RTBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364372409C7A200FB1727 /* RTBodyLabel.swift */; };
+		7783643A2409C8CD00FB1727 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364392409C8CD00FB1727 /* UIView+Ext.swift */; };
+		7783643D2409C9A300FB1727 /* RTDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783643C2409C9A300FB1727 /* RTDataLoadingVC.swift */; };
+		7783643F2409C9E000FB1727 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783643E2409C9E000FB1727 /* UIViewController+Ext.swift */; };
+		778364412409D3C900FB1727 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364402409D3C900FB1727 /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,15 @@
 		778364242409BD4600FB1727 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		778364262409BE1700FB1727 /* RTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTError.swift; sourceTree = "<group>"; };
 		778364282409BFDE00FB1727 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		7783642A2409C56800FB1727 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		7783642F2409C65200FB1727 /* RTImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTImageView.swift; sourceTree = "<group>"; };
+		778364332409C73C00FB1727 /* RTTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTTitleLabel.swift; sourceTree = "<group>"; };
+		778364352409C77A00FB1727 /* RTSecondaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTSecondaryLabel.swift; sourceTree = "<group>"; };
+		778364372409C7A200FB1727 /* RTBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTBodyLabel.swift; sourceTree = "<group>"; };
+		778364392409C8CD00FB1727 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		7783643C2409C9A300FB1727 /* RTDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDataLoadingVC.swift; sourceTree = "<group>"; };
+		7783643E2409C9E000FB1727 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		778364402409D3C900FB1727 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				778364262409BE1700FB1727 /* RTError.swift */,
+				778364402409D3C900FB1727 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -126,6 +145,8 @@
 		778364202409BACF00FB1727 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				778364392409C8CD00FB1727 /* UIView+Ext.swift */,
+				7783643E2409C9E000FB1727 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -133,8 +154,46 @@
 		778364212409BADE00FB1727 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7783643B2409C98500FB1727 /* ViewControllers */,
+				778364322409C72D00FB1727 /* Labels */,
+				7783642E2409C63300FB1727 /* Cells */,
+				778364312409C65500FB1727 /* Images */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7783642E2409C63300FB1727 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7783642A2409C56800FB1727 /* TrackCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		778364312409C65500FB1727 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7783642F2409C65200FB1727 /* RTImageView.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		778364322409C72D00FB1727 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				778364332409C73C00FB1727 /* RTTitleLabel.swift */,
+				778364352409C77A00FB1727 /* RTSecondaryLabel.swift */,
+				778364372409C7A200FB1727 /* RTBodyLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		7783643B2409C98500FB1727 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7783643C2409C9A300FB1727 /* RTDataLoadingVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,10 +266,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778364382409C7A200FB1727 /* RTBodyLabel.swift in Sources */,
+				7783643D2409C9A300FB1727 /* RTDataLoadingVC.swift in Sources */,
+				7783643F2409C9E000FB1727 /* UIViewController+Ext.swift in Sources */,
+				7783642B2409C56800FB1727 /* TrackCell.swift in Sources */,
+				778364302409C65200FB1727 /* RTImageView.swift in Sources */,
 				778364272409BE1700FB1727 /* RTError.swift in Sources */,
 				778364252409BD4600FB1727 /* NetworkManager.swift in Sources */,
+				778364412409D3C900FB1727 /* UIHelper.swift in Sources */,
 				778364072409B97500FB1727 /* AppDelegate.swift in Sources */,
+				778364342409C73C00FB1727 /* RTTitleLabel.swift in Sources */,
+				778364362409C77A00FB1727 /* RTSecondaryLabel.swift in Sources */,
 				778364232409BB5000FB1727 /* TrackListVC.swift in Sources */,
+				7783643A2409C8CD00FB1727 /* UIView+Ext.swift in Sources */,
 				778364092409B97500FB1727 /* SceneDelegate.swift in Sources */,
 				778364292409BFDE00FB1727 /* Track.swift in Sources */,
 			);

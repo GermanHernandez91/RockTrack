@@ -8,23 +8,19 @@
 
 import Foundation
 
-struct Tracks: Codable {
+struct Tracks: Codable, Hashable {
     let resultCount: Int
     let results: [Track]
 }
 
 
-struct Track: Codable {
-    let artistName, trackName: String
-    let trackViewURL: String
+struct Track: Codable, Hashable {
+    let artistName: String
+    let trackName: String
+    let trackViewUrl: String
+    let artworkUrl60: String
     let artworkUrl100: String
     let trackPrice: Double
-    let releaseDate: Date
+    let releaseDate: String
     let trackTimeMillis: Int
-
-    enum CodingKeys: String, CodingKey {
-        case artistName, trackName
-        case trackViewURL = "trackViewUrl"
-        case artworkUrl100, trackPrice, releaseDate, trackTimeMillis
-    }
 }

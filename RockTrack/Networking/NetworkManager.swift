@@ -46,9 +46,11 @@ class NetworkManager {
             
             do {
                 let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let tracks = try decoder.decode(Tracks.self, from: data)
                 completed(.success(tracks.results))
             } catch {
+                debugPrint(error.localizedDescription)
                 completed(.failure(.invalidData))
             }
         }
