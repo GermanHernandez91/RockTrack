@@ -12,6 +12,9 @@
 		778364102409B97600FB1727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7783640F2409B97600FB1727 /* Assets.xcassets */; };
 		778364132409B97600FB1727 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778364112409B97600FB1727 /* LaunchScreen.storyboard */; };
 		778364232409BB5000FB1727 /* TrackListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364222409BB5000FB1727 /* TrackListVC.swift */; };
+		778364252409BD4600FB1727 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364242409BD4600FB1727 /* NetworkManager.swift */; };
+		778364272409BE1700FB1727 /* RTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364262409BE1700FB1727 /* RTError.swift */; };
+		778364292409BFDE00FB1727 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364282409BFDE00FB1727 /* Track.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		778364122409B97600FB1727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		778364142409B97600FB1727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		778364222409BB5000FB1727 /* TrackListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListVC.swift; sourceTree = "<group>"; };
+		778364242409BD4600FB1727 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		778364262409BE1700FB1727 /* RTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTError.swift; sourceTree = "<group>"; };
+		778364282409BFDE00FB1727 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 		7783641C2409BA6E00FB1727 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				778364282409BFDE00FB1727 /* Track.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,6 +110,7 @@
 		7783641E2409BA7E00FB1727 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				778364262409BE1700FB1727 /* RTError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 		7783641F2409BA8500FB1727 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				778364242409BD4600FB1727 /* NetworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -198,9 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778364272409BE1700FB1727 /* RTError.swift in Sources */,
+				778364252409BD4600FB1727 /* NetworkManager.swift in Sources */,
 				778364072409B97500FB1727 /* AppDelegate.swift in Sources */,
 				778364232409BB5000FB1727 /* TrackListVC.swift in Sources */,
 				778364092409B97500FB1727 /* SceneDelegate.swift in Sources */,
+				778364292409BFDE00FB1727 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

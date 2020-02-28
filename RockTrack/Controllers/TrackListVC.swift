@@ -18,6 +18,9 @@ class TrackListVC: UIViewController {
     
 
     func configureViewController() {
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .systemBackground
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Rock Tracks"
     }
 }
