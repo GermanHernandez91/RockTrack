@@ -11,6 +11,7 @@
 		778364092409B97500FB1727 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364082409B97500FB1727 /* SceneDelegate.swift */; };
 		778364102409B97600FB1727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7783640F2409B97600FB1727 /* Assets.xcassets */; };
 		778364132409B97600FB1727 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778364112409B97600FB1727 /* LaunchScreen.storyboard */; };
+		778364232409BB5000FB1727 /* TrackListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364222409BB5000FB1727 /* TrackListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		7783640F2409B97600FB1727 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		778364122409B97600FB1727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		778364142409B97600FB1727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		778364222409BB5000FB1727 /* TrackListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +54,12 @@
 		778364052409B97500FB1727 /* RockTrack */ = {
 			isa = PBXGroup;
 			children = (
-				7783641E2409BA7E00FB1727 /* Utilities */,
 				7783641C2409BA6E00FB1727 /* Models */,
+				778364212409BADE00FB1727 /* Views */,
 				7783641D2409BA7300FB1727 /* Controllers */,
+				778364202409BACF00FB1727 /* Extensions */,
 				7783641F2409BA8500FB1727 /* Networking */,
+				7783641E2409BA7E00FB1727 /* Utilities */,
 				7783641A2409BA5300FB1727 /* Resources */,
 				7783641B2409BA6600FB1727 /* Support */,
 				778364142409B97600FB1727 /* Info.plist */,
@@ -91,6 +95,7 @@
 		7783641D2409BA7300FB1727 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				778364222409BB5000FB1727 /* TrackListVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -107,6 +112,20 @@
 			children = (
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		778364202409BACF00FB1727 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		778364212409BADE00FB1727 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				778364072409B97500FB1727 /* AppDelegate.swift in Sources */,
+				778364232409BB5000FB1727 /* TrackListVC.swift in Sources */,
 				778364092409B97500FB1727 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +339,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXU4QPBL2H;
 				INFOPLIST_FILE = RockTrack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,6 +358,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXU4QPBL2H;
 				INFOPLIST_FILE = RockTrack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
