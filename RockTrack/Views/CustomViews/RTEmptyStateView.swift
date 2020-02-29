@@ -44,7 +44,7 @@ class RTEmptyStateView: UIView {
         if #available(iOS 13.0, *) {
             messageLabel.textColor = .secondaryLabel
         } else {
-            messageLabel.textColor = .black
+            messageLabel.textColor = .gray
         }
         
         NSLayoutConstraint.activate([

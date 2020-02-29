@@ -11,7 +11,7 @@ import SafariServices
 
 extension UIViewController {
     
-    func pressentAlertOnMainThread(title: String, message: String) {
+    func presentAlertOnMainThread(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default))

@@ -157,7 +157,7 @@ class TrackDetailsVC: UIViewController {
     
     @objc func viewButtonPressed() {
         guard let url = URL(string: track.trackViewUrl) else {
-            self.pressentAlertOnMainThread(title: "Something went wrong", message: "Invalid URL provided")
+            self.presentAlertOnMainThread(title: "Something went wrong", message: "Invalid URL provided")
             return
         }
         
@@ -170,11 +170,11 @@ class TrackDetailsVC: UIViewController {
             guard let self = self else { return }
             
             guard let error = error else {
-                self.pressentAlertOnMainThread(title: "Success", message: "You have successfully favorited this track.")
+                self.presentAlertOnMainThread(title: "Success", message: "You have successfully favorited this track.")
                 return
             }
             
-            self.pressentAlertOnMainThread(title: "Something went wrong", message: error.rawValue)
+            self.presentAlertOnMainThread(title: "Something went wrong", message: error.rawValue)
         }
     }
 }

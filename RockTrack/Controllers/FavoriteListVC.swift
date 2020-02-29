@@ -71,7 +71,7 @@ class FavoriteListVC: RTDataLoadingVC {
                 self.updateUI(with: favorites)
                 
             case .failure(let error):
-                self.pressentAlertOnMainThread(title: "Something went wrong", message: error.rawValue)
+                self.presentAlertOnMainThread(title: "Something went wrong", message: error.rawValue)
             }
         }
     }
@@ -118,7 +118,7 @@ extension FavoriteListVC: UITableViewDelegate, UITableViewDataSource {
                 return
             }
             
-            self.pressentAlertOnMainThread(title: "Unable to delete", message: error.rawValue)
+            self.presentAlertOnMainThread(title: "Unable to delete", message: error.rawValue)
         }
     }
     

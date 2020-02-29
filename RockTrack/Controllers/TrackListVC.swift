@@ -87,7 +87,7 @@ class TrackListVC: RTDataLoadingVC {
                 self.updateData(with: tracks)
                 
             case .failure(let error):
-                self.pressentAlertOnMainThread(title: "Something went wrong", message: error.rawValue)
+                self.presentAlertOnMainThread(title: "Something went wrong", message: error.rawValue)
             }
         }
     }

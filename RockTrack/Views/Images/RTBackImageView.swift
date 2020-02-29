@@ -27,14 +27,17 @@ class RTBackImageView: UIImageView {
     // MARK: - Methods
     
     private func configure() {
-        clipsToBounds = true
-        image = backImage
+        image                       = backImage
+        clipsToBounds               = true
+        isUserInteractionEnabled    = true
+        
         if #available(iOS 13.0, *) {
             tintColor = .label
         } else {
             tintColor = .black
         }
+        
         translatesAutoresizingMaskIntoConstraints = false
-        isUserInteractionEnabled = true
+        
     }
 }

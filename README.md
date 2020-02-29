@@ -11,6 +11,18 @@ App that get  rock tracks from apple music api and shows details about that song
 - Swift language
 - Support for iPhone and iPad.
 
+## Structure
+
+The app is using  MVC  since there are just three screen. The app itself is really baisc to spend a lot of time adding a MVVM-C artichecture.
+
+- Models: Network data representation
+- Views: All custom views used in the appilication and gruped by categories (labels, buttons, etc..)
+- Controllers: UIViewControllers that acts like screens.
+- Extensions: UI Extensions grouped by files.
+- Utilities: Custom error class, constants and helpers.
+- Resources: Assets and Splash screen.
+- Support: AppDelegate and SceneDelegate files
+
 ## Functionality
 
 - Initial view where all rock tracks are loaded.
