@@ -16,7 +16,8 @@ class TrackDetailsVC: UIViewController {
     
     let headerImage = RTImageView(frame: .zero)
     let backButton  = RTBackImageView(frame: .zero)
-    let viewButton  = RTButton(title: "More details")
+    let viewButton  = RTButton(backgroundColor: .purple, title: "More details")
+    let favButton   = RTButton(backgroundColor: .blue, title: "Add to favorites")
     let trackName   = RTTitleLabel(textAlignment: .left, fontSize: 26)
     let artistName  = RTSecondaryLabel(fontSize: 22)
     let trackPrice  = RTBodyLabel(textAlignment: .left)
@@ -29,13 +30,14 @@ class TrackDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubviews(headerImage, backButton, trackName, artistName, trackPrice, duration, releaseData, viewButton)
+        view.addSubviews(headerImage, backButton, trackName, artistName, trackPrice, duration, releaseData, viewButton, favButton)
 
         configureViewController()
         configureHeaderImage()
         configureBackButton()
         configureTrackContent()
         configureViewButton()
+        configureFavButton()
     }
     
     
@@ -120,8 +122,7 @@ class TrackDetailsVC: UIViewController {
     
     
     func configureViewButton() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewButtonPressed))
-        viewButton.addGestureRecognizer(tapGesture)
+        viewButton.addTarget(self, action: #selector(viewButtonPressed), for: .touchUpInside)
         
         let padding: CGFloat        = 10
         let heightPadding: CGFloat  = 50
@@ -131,6 +132,20 @@ class TrackDetailsVC: UIViewController {
             viewButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             viewButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             viewButton.heightAnchor.constraint(equalToConstant: heightPadding),
+        ])
+    }
+    
+    
+    func configureFavButton() {
+        favButton.addTarget(self, action: #selector(favButtonPressed), for: .touchUpInside)
+        
+        let padding: CGFloat = 10
+        
+        NSLayoutConstraint.activate([
+            favButton.topAnchor.constraint(equalTo: viewButton.bottomAnchor, constant: 20),
+            favButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            favButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            favButton.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
     
@@ -147,5 +162,10 @@ class TrackDetailsVC: UIViewController {
         }
         
         presentSafariVC(with: url)
+    }
+    
+    
+    @objc func favButtonPressed() {
+        
     }
 }
