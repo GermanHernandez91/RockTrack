@@ -55,4 +55,11 @@ class RTDataLoadingVC: UIViewController {
             }
         }
     }
+    
+    
+    func showEmptyStateView(with message: String, in view: UIView) {
+        let emptyStateView = RTEmptyStateView(message: message)
+        emptyStateView.frame = view.bounds
+        view.addSubview(emptyStateView)
+    }
 }
