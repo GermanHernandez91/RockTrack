@@ -25,3 +25,4 @@ App that get  rock tracks from apple music api and shows details about that song
 - Ability to add a track into favorites.
 - View favorites in offline mode.
 - UINavigationBar
+- Swipe to remove tracks from favorite list
