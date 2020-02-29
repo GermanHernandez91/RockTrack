@@ -30,6 +30,8 @@
 		77945257240A8FD400DC2297 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77945256240A8FD400DC2297 /* String+Ext.swift */; };
 		77945259240A906100DC2297 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77945258240A906100DC2297 /* Date+Ext.swift */; };
 		7794525C240A94D800DC2297 /* RTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794525B240A94D800DC2297 /* RTButton.swift */; };
+		7794525E240AA50400DC2297 /* RTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794525D240AA50400DC2297 /* RTTabBarController.swift */; };
+		77945260240AA59300DC2297 /* FavoriteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794525F240AA59300DC2297 /* FavoriteListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		77945256240A8FD400DC2297 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		77945258240A906100DC2297 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		7794525B240A94D800DC2297 /* RTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTButton.swift; sourceTree = "<group>"; };
+		7794525D240AA50400DC2297 /* RTTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTTabBarController.swift; sourceTree = "<group>"; };
+		7794525F240AA59300DC2297 /* FavoriteListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 			children = (
 				778364222409BB5000FB1727 /* TrackListVC.swift */,
 				778364422409DC6200FB1727 /* TrackDetailsVC.swift */,
+				7794525F240AA59300DC2297 /* FavoriteListVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				778364322409C72D00FB1727 /* Labels */,
 				7783642E2409C63300FB1727 /* Cells */,
 				778364312409C65500FB1727 /* Images */,
+				7794525D240AA50400DC2297 /* RTTabBarController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 				7783643D2409C9A300FB1727 /* RTDataLoadingVC.swift in Sources */,
 				7783643F2409C9E000FB1727 /* UIViewController+Ext.swift in Sources */,
 				778364432409DC6200FB1727 /* TrackDetailsVC.swift in Sources */,
+				77945260240AA59300DC2297 /* FavoriteListVC.swift in Sources */,
+				7794525E240AA50400DC2297 /* RTTabBarController.swift in Sources */,
 				7783642B2409C56800FB1727 /* TrackCell.swift in Sources */,
 				778364302409C65200FB1727 /* RTImageView.swift in Sources */,
 				778364272409BE1700FB1727 /* RTError.swift in Sources */,
