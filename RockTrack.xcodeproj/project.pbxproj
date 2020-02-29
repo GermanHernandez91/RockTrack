@@ -32,6 +32,7 @@
 		7794525C240A94D800DC2297 /* RTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794525B240A94D800DC2297 /* RTButton.swift */; };
 		7794525E240AA50400DC2297 /* RTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794525D240AA50400DC2297 /* RTTabBarController.swift */; };
 		77945260240AA59300DC2297 /* FavoriteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794525F240AA59300DC2297 /* FavoriteListVC.swift */; };
+		77945262240AA88600DC2297 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77945261240AA88600DC2297 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		7794525B240A94D800DC2297 /* RTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTButton.swift; sourceTree = "<group>"; };
 		7794525D240AA50400DC2297 /* RTTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTTabBarController.swift; sourceTree = "<group>"; };
 		7794525F240AA59300DC2297 /* FavoriteListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListVC.swift; sourceTree = "<group>"; };
+		77945261240AA88600DC2297 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				778364242409BD4600FB1727 /* NetworkManager.swift */,
+				77945261240AA88600DC2297 /* PersistenceManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				778364382409C7A200FB1727 /* RTBodyLabel.swift in Sources */,
 				778364452409E6F200FB1727 /* Constants.swift in Sources */,
 				7783643D2409C9A300FB1727 /* RTDataLoadingVC.swift in Sources */,
+				77945262240AA88600DC2297 /* PersistenceManager.swift in Sources */,
 				7783643F2409C9E000FB1727 /* UIViewController+Ext.swift in Sources */,
 				778364432409DC6200FB1727 /* TrackDetailsVC.swift in Sources */,
 				77945260240AA59300DC2297 /* FavoriteListVC.swift in Sources */,

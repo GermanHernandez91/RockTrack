@@ -166,6 +166,15 @@ class TrackDetailsVC: UIViewController {
     
     
     @objc func favButtonPressed() {
-        
+        PersistenceManager.updateWith(track: track, actionType: .add) { [weak self] error in
+            guard let self = self else { return }
+            
+            guard let error = error else {
+                self.pressentAlertOnMainThread(title: "Success", message: "You have successfully favorited this track.")
+                return
+            }
+            
+            self.pressentAlertOnMainThread(title: "Something went wrong", message: error.rawValue)
+        }
     }
 }
