@@ -32,7 +32,11 @@ class RTTitleLabel: UILabel {
     // MARK: - Methods
     
     private func configure() {
-        textColor                   = .label
+        if #available(iOS 13.0, *) {
+            textColor = .label
+        } else {
+            textColor = .black
+        }
         numberOfLines               = 0
         minimumScaleFactor          = 0.90
         lineBreakMode               = .byWordWrapping

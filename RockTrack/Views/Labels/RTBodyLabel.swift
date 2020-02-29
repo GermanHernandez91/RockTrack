@@ -30,7 +30,12 @@ class RTBodyLabel: UILabel {
     // MARK: - Methods
     
     private func configure() {
-        textColor                           = .secondaryLabel
+        if #available(iOS 13.0, *) {
+            textColor = .secondaryLabel
+        } else {
+            textColor = .gray
+        }
+        
         font                                = UIFont.preferredFont(forTextStyle: .body)
         adjustsFontSizeToFitWidth           = true
         minimumScaleFactor                  = 0.75

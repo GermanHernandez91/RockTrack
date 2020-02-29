@@ -14,9 +14,11 @@ class TrackListVC: RTDataLoadingVC {
     
     // MARK: - Properties
     
-    var tracks: [Track] = []
+    var tracks: [Track]         = []
+    var filteredTracks: [Track] = []
+    var isSearching: Bool       = false
+    
     var collectionView: UICollectionView!
-    var dataSource: UICollectionViewDiffableDataSource<Section, Track>!
     
     
     // MARK: - Overrides
@@ -27,7 +29,7 @@ class TrackListVC: RTDataLoadingVC {
         configureViewController()
         getTracks()
         configureCellCollectionView()
-        configureDataSource()
+        configureSearchController()
     }
     
     
@@ -35,16 +37,38 @@ class TrackListVC: RTDataLoadingVC {
     
     func configureViewController() {
         title                   = "Rock Tracks"
-        view.backgroundColor    = .systemBackground
+        
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = .white
+        }
+        
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    
+    func configureSearchController() {
+        let searchController                                    = UISearchController()
+        searchController.searchResultsUpdater                   = self
+        searchController.searchBar.placeholder                  = "Search for a track name"
+        searchController.obscuresBackgroundDuringPresentation   = false
+        navigationItem.searchController                         = searchController
     }
     
     
     func configureCellCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.generateCollectionCellHorizontalCell(in: view))
         view.addSubview(collectionView)
+        
         collectionView.delegate = self
-        collectionView.backgroundColor = .systemBackground
+        collectionView.dataSource = self
+        
+        if #available(iOS 13.0, *) {
+            collectionView.backgroundColor = .systemBackground
+        } else {
+            collectionView.backgroundColor = .white
+        }
         collectionView.register(TrackCell.self, forCellWithReuseIdentifier: TrackCell.reuseId)
     }
     
@@ -59,8 +83,8 @@ class TrackListVC: RTDataLoadingVC {
             
             switch result {
             case .success(let tracks):
-                self.tracks.append(contentsOf: tracks)
-                self.updateData(on: self.tracks)
+                self.tracks = tracks
+                self.updateData(with: tracks)
                 
             case .failure(let error):
                 self.pressentAlertOnMainThread(title: "Something went wrong", message: error.rawValue)
@@ -69,29 +93,54 @@ class TrackListVC: RTDataLoadingVC {
     }
     
     
-    func updateData(on tracks: [Track]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Track>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(tracks)
-        DispatchQueue.main.async { self.dataSource.apply(snapshot, animatingDifferences: true) }
-    }
-    
-    
-    func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Track>(collectionView: collectionView, cellProvider: { collectionView, indexPath, track -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrackCell.reuseId, for: indexPath) as! TrackCell
-            cell.set(for: track)
-            return cell
-        })
+    func updateData(with tracks: [Track]) {
+        filteredTracks = tracks
+        DispatchQueue.main.async { self.collectionView.reloadData() }
     }
 }
 
 
-// MARK: - UITableView Extension
+// MARK: - UICollectionViewDelegate Extension
 
-extension TrackListVC: UICollectionViewDelegate {
+extension TrackListVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return filteredTracks.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrackCell.reuseId, for: indexPath) as! TrackCell
+        cell.set(for: filteredTracks[indexPath.row])
+        return cell
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Pressed")
+        let destVC = TrackDetailsVC()
+        let index = indexPath.row
+        destVC.track = isSearching ? filteredTracks[index] : tracks[index]
+        destVC.modalPresentationStyle = .fullScreen
+        present(destVC, animated: true)
+    }
+}
+
+
+// MARK: - UISearchResultsUpdating Delegate
+
+extension TrackListVC: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else {
+            filteredTracks.removeAll()
+            updateData(with: tracks)
+            isSearching = false
+            return
+        }
+        
+        isSearching     = true
+        filteredTracks  = tracks.filter { $0.trackName.lowercased().contains(filter.lowercased()) }
+        
+        updateData(with: filteredTracks)
     }
 }

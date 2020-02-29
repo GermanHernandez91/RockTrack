@@ -1,15 +1,18 @@
 //
-//  RTSecondaryLabel.swift
+//  RTBackImageView.swift
 //  RockTrack
 //
-//  Created by German Hernandez on 28/02/2020.
+//  Created by German Hernandez on 29/02/2020.
 //  Copyright © 2020 German Hernandez. All rights reserved.
 //
 
 import UIKit
 
-class RTSecondaryLabel: UILabel {
+class RTBackImageView: UIImageView {
     
+    let backImage = Images.backCircleArrow
+    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -21,23 +24,17 @@ class RTSecondaryLabel: UILabel {
     }
     
     
-    convenience init(fontSize: CGFloat) {
-        self.init(frame: .zero)
-        font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
-    }
-    
-    
     // MARK: - Methods
     
     private func configure() {
+        clipsToBounds = true
+        image = backImage
         if #available(iOS 13.0, *) {
-            textColor = .secondaryLabel
+            tintColor = .label
         } else {
-            textColor = .gray
+            tintColor = .black
         }
-        adjustsFontSizeToFitWidth   = true
-        minimumScaleFactor          = 0.90
-        lineBreakMode               = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
+        isUserInteractionEnabled = true
     }
 }

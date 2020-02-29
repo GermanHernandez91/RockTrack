@@ -11,6 +11,7 @@ import UIKit
 class RTImageView: UIImageView {
 
     let cache = NetworkManager.shared.cache
+    let placeholder = Images.placeholderImage
     
     
     override init(frame: CGRect) {
@@ -27,7 +28,9 @@ class RTImageView: UIImageView {
     // MARK: - Methods
     
     private func configure() {
-        clipsToBounds = true
+        clipsToBounds   = true
+        image           = placeholder
+        
         translatesAutoresizingMaskIntoConstraints = false
     }
     

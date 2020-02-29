@@ -24,6 +24,12 @@
 		7783643D2409C9A300FB1727 /* RTDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783643C2409C9A300FB1727 /* RTDataLoadingVC.swift */; };
 		7783643F2409C9E000FB1727 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783643E2409C9E000FB1727 /* UIViewController+Ext.swift */; };
 		778364412409D3C900FB1727 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364402409D3C900FB1727 /* UIHelper.swift */; };
+		778364432409DC6200FB1727 /* TrackDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364422409DC6200FB1727 /* TrackDetailsVC.swift */; };
+		778364452409E6F200FB1727 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364442409E6F200FB1727 /* Constants.swift */; };
+		778364472409EB3800FB1727 /* RTBackImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778364462409EB3800FB1727 /* RTBackImageView.swift */; };
+		77945257240A8FD400DC2297 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77945256240A8FD400DC2297 /* String+Ext.swift */; };
+		77945259240A906100DC2297 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77945258240A906100DC2297 /* Date+Ext.swift */; };
+		7794525C240A94D800DC2297 /* RTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794525B240A94D800DC2297 /* RTButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +52,12 @@
 		7783643C2409C9A300FB1727 /* RTDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDataLoadingVC.swift; sourceTree = "<group>"; };
 		7783643E2409C9E000FB1727 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		778364402409D3C900FB1727 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		778364422409DC6200FB1727 /* TrackDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailsVC.swift; sourceTree = "<group>"; };
+		778364442409E6F200FB1727 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		778364462409EB3800FB1727 /* RTBackImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTBackImageView.swift; sourceTree = "<group>"; };
+		77945256240A8FD400DC2297 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		77945258240A906100DC2297 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		7794525B240A94D800DC2297 /* RTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				778364222409BB5000FB1727 /* TrackListVC.swift */,
+				778364422409DC6200FB1727 /* TrackDetailsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -130,6 +143,7 @@
 			children = (
 				778364262409BE1700FB1727 /* RTError.swift */,
 				778364402409D3C900FB1727 /* UIHelper.swift */,
+				778364442409E6F200FB1727 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -147,6 +161,8 @@
 			children = (
 				778364392409C8CD00FB1727 /* UIView+Ext.swift */,
 				7783643E2409C9E000FB1727 /* UIViewController+Ext.swift */,
+				77945256240A8FD400DC2297 /* String+Ext.swift */,
+				77945258240A906100DC2297 /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -154,6 +170,7 @@
 		778364212409BADE00FB1727 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7794525A240A942E00DC2297 /* Buttons */,
 				7783643B2409C98500FB1727 /* ViewControllers */,
 				778364322409C72D00FB1727 /* Labels */,
 				7783642E2409C63300FB1727 /* Cells */,
@@ -174,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				7783642F2409C65200FB1727 /* RTImageView.swift */,
+				778364462409EB3800FB1727 /* RTBackImageView.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -194,6 +212,14 @@
 				7783643C2409C9A300FB1727 /* RTDataLoadingVC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7794525A240A942E00DC2297 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				7794525B240A94D800DC2297 /* RTButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				778364382409C7A200FB1727 /* RTBodyLabel.swift in Sources */,
+				778364452409E6F200FB1727 /* Constants.swift in Sources */,
 				7783643D2409C9A300FB1727 /* RTDataLoadingVC.swift in Sources */,
 				7783643F2409C9E000FB1727 /* UIViewController+Ext.swift in Sources */,
+				778364432409DC6200FB1727 /* TrackDetailsVC.swift in Sources */,
 				7783642B2409C56800FB1727 /* TrackCell.swift in Sources */,
 				778364302409C65200FB1727 /* RTImageView.swift in Sources */,
 				778364272409BE1700FB1727 /* RTError.swift in Sources */,
@@ -277,10 +305,14 @@
 				778364072409B97500FB1727 /* AppDelegate.swift in Sources */,
 				778364342409C73C00FB1727 /* RTTitleLabel.swift in Sources */,
 				778364362409C77A00FB1727 /* RTSecondaryLabel.swift in Sources */,
+				77945257240A8FD400DC2297 /* String+Ext.swift in Sources */,
 				778364232409BB5000FB1727 /* TrackListVC.swift in Sources */,
 				7783643A2409C8CD00FB1727 /* UIView+Ext.swift in Sources */,
+				778364472409EB3800FB1727 /* RTBackImageView.swift in Sources */,
 				778364092409B97500FB1727 /* SceneDelegate.swift in Sources */,
+				7794525C240A94D800DC2297 /* RTButton.swift in Sources */,
 				778364292409BFDE00FB1727 /* Track.swift in Sources */,
+				77945259240A906100DC2297 /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXU4QPBL2H;
 				INFOPLIST_FILE = RockTrack/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,7 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXU4QPBL2H;
 				INFOPLIST_FILE = RockTrack/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

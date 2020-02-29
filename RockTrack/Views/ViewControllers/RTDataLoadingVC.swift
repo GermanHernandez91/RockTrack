@@ -17,14 +17,25 @@ class RTDataLoadingVC: UIViewController {
         containerView = UIView(frame: view.bounds)
         view.addSubview(containerView)
         
-        containerView.backgroundColor = .systemBackground
+        if #available(iOS 13.0, *) {
+            containerView.backgroundColor = .systemBackground
+        } else {
+            containerView.backgroundColor = .white
+        }
+        
         containerView.alpha = 0
         
         UIView.animate(withDuration: 0.25) { self.containerView.alpha = 0.8 }
         
-        let activityIndicator = UIActivityIndicatorView(style: .large)
-        containerView.addSubview(activityIndicator)
+        var activityIndicator: UIActivityIndicatorView!
         
+        if #available(iOS 13.0, *) {
+            activityIndicator = UIActivityIndicatorView(style: .large)
+        } else {
+            activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        }
+        
+        containerView.addSubview(activityIndicator)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([

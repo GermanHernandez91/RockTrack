@@ -13,7 +13,7 @@ class TrackCell: UICollectionViewCell {
     static let reuseId = "TrackCell"
     
     let trackImageView = RTImageView(frame: .zero)
-    let trackName = RTTitleLabel(textAlignment: .left, fontSize: 22)
+    let trackName = RTTitleLabel(textAlignment: .left, fontSize: 20)
     let artistName = RTSecondaryLabel(fontSize: 18)
     let trackPrice = RTBodyLabel(textAlignment: .left)
     
@@ -46,7 +46,6 @@ class TrackCell: UICollectionViewCell {
         trackImageView.layer.cornerRadius   = 5
         trackImageView.layer.maskedCorners  = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
         
-        contentView.layer.cornerRadius  = 20
         contentView.layer.borderWidth   = 1
         contentView.layer.borderColor   = UIColor.clear.cgColor
         contentView.layer.masksToBounds = true
@@ -59,7 +58,11 @@ class TrackCell: UICollectionViewCell {
         layer.shadowPath        = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
         layer.backgroundColor   = UIColor.clear.cgColor
         
-        backgroundColor = .systemBackground
+        if #available(iOS 13.0, *) {
+            backgroundColor = .systemBackground
+        } else {
+            backgroundColor = .white
+        }
         
         let padding: CGFloat = 12
         
@@ -72,12 +75,12 @@ class TrackCell: UICollectionViewCell {
             trackName.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
             trackName.leadingAnchor.constraint(equalTo: trackImageView.trailingAnchor, constant: padding),
             trackName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            trackName.heightAnchor.constraint(equalToConstant: 40),
+            trackName.heightAnchor.constraint(equalToConstant: 25),
             
             artistName.topAnchor.constraint(equalTo: trackName.bottomAnchor),
             artistName.leadingAnchor.constraint(equalTo: trackImageView.trailingAnchor, constant: padding),
             artistName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            artistName.heightAnchor.constraint(equalToConstant: 30),
+            artistName.heightAnchor.constraint(equalToConstant: 22),
             
             trackPrice.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding),
             trackPrice.leadingAnchor.constraint(equalTo: trackImageView.trailingAnchor, constant: padding),
