@@ -52,7 +52,8 @@ class TrackDetailsVC: UIViewController {
     
     func configureHeaderImage() {
         headerImage.downloadImage(fromURL: track.artworkUrl100)
-        headerImage.alpha = 0.7
+        
+        headerImage.contentMode = .scaleToFill
         
         NSLayoutConstraint.activate([
             headerImage.topAnchor.constraint(equalTo: view.topAnchor),
@@ -68,7 +69,7 @@ class TrackDetailsVC: UIViewController {
         backButton.addGestureRecognizer(tapGesture)
         
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             backButton.heightAnchor.constraint(equalToConstant: 40),
             backButton.widthAnchor.constraint(equalToConstant: 40),

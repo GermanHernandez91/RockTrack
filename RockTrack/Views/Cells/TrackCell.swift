@@ -43,9 +43,6 @@ class TrackCell: UICollectionViewCell {
     private func configure() {
         addSubviews(trackImageView, trackName, artistName, trackPrice)
         
-        trackImageView.layer.cornerRadius   = 5
-        trackImageView.layer.maskedCorners  = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-        
         contentView.layer.borderWidth   = 1
         contentView.layer.borderColor   = UIColor.clear.cgColor
         contentView.layer.masksToBounds = true
@@ -69,8 +66,8 @@ class TrackCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             trackImageView.topAnchor.constraint(equalTo: self.topAnchor),
             trackImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            trackImageView.heightAnchor.constraint(equalToConstant: 150),
-            trackImageView.widthAnchor.constraint(equalToConstant: 180),
+            trackImageView.heightAnchor.constraint(equalToConstant: 100),
+            trackImageView.widthAnchor.constraint(equalToConstant: 100),
             
             trackName.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
             trackName.leadingAnchor.constraint(equalTo: trackImageView.trailingAnchor, constant: padding),

@@ -30,6 +30,7 @@ class RTImageView: UIImageView {
     private func configure() {
         clipsToBounds   = true
         image           = placeholder
+        contentMode     = .scaleAspectFit
         
         translatesAutoresizingMaskIntoConstraints = false
     }
